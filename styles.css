@@ -1,0 +1,253 @@
+/* Global Styling */
+body {
+    background-color: #0d0d0d; /* Dark background */
+    color: #dcdcdc; /* Neutral light grey text */
+    font-family: 'Roboto Mono', monospace; /* Futuristic monospaced font */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Headings Styling */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif; /* Futuristic display font */
+    color: #e0e0e0; /* Light grey for headings */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(224, 224, 224, 0.7); /* Subtle glow effect */
+}
+
+/* Paragraphs */
+p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #b0b0b0; /* Slightly darker grey for body text */
+}
+
+/* Floating Navigation Bar */
+header {
+    background-color: rgba(13, 13, 13, 0.7); /* Semi-transparent background */
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px); /* Blur effect for a modern touch */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5); /* Shadow for floating effect */
+    transition: all 0.3s ease;
+}
+
+/* Class for hidden navigation bar */
+header.hidden {
+    transform: translateY(-100%); /* Moves the nav bar up out of view */
+    transition: transform 0.3s ease;
+}
+
+/* Floating effect on scroll */
+header.scrolled {
+    background-color: rgba(13, 13, 13, 0.95); /* Darker background on scroll */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); /* Deeper shadow on scroll */
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+}
+
+nav a {
+    color: #a9a9a9; /* Neutral grey for navigation links */
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+    padding: 10px 15px; /* Add padding for a button-like feel */
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 5px; /* Rounded edges */
+    backdrop-filter: blur(5px); /* Slight blur for the floating effect */
+}
+
+nav a:hover {
+    color: #ffffff; /* White text on hover */
+    background-color: rgba(0, 209, 255, 0.2); /* Neon blue hover effect */
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; /* Glowing shadow on hover */
+    transform: translateY(-3px); /* Floating effect on hover */
+}
+
+/* Home Section */
+#home {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(13,13,13,1) 100%);
+    background-image: url('path/to/your/cyber-background.png'); /* Optional background image for more depth */
+    background-size: cover;
+    background-blend-mode: overlay;
+    position: relative;
+    overflow: hidden;
+}
+
+#home h1 {
+    font-size: 3rem;
+    color: #e0e0e0; /* Light grey for hero text */
+    animation: neon-text 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon-text {
+    from {
+        text-shadow: 0 0 10px #e0e0e0, 0 0 20px #e0e0e0, 0 0 30px #e0e0e0, 0 0 40px #e0e0e0;
+    }
+    to {
+        text-shadow: 0 0 20px #e0e0e0, 0 0 30px #e0e0e0, 0 0 40px #e0e0e0, 0 0 50px #e0e0e0;
+    }
+}
+
+#home .cta-button {
+    background-color: #00ff00; /* Neon green */
+    color: #0d0d0d; /* Dark text for contrast */
+    padding: 15px 30px;
+    border: 2px solid #00ff00; /* Neon border */
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; /* Glowing shadow */
+}
+
+#home .cta-button:hover {
+    background-color: transparent; /* Transparent on hover */
+    color: #00ff00; /* Neon green text */
+    box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00; /* Stronger glow on hover */
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Sections */
+section {
+    padding: 100px 20px; /* Ample spacing for readability */
+    text-align: center;
+    border-bottom: 2px dashed #333; /* Digital-style dashed divider */
+    position: relative;
+}
+
+section:nth-child(even) {
+    background-color: #1a1a1a; /* Alternating background color for sections */
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, transparent, #00ff00, transparent);
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #cccccc; /* Neutral light grey for section headings */
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px rgba(204, 204, 204, 0.7);
+}
+
+/* Skill Badges */
+.skill-badge {
+    display: inline-block;
+    background-color: #0d0d0d; /* Badge background */
+    color: #e0e0e0; /* Neutral grey text */
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #00ff00; /* Neon border */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.skill-badge:hover {
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; /* Glowing shadow on hover */
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #1a1a1a; /* Dark background for footer */
+    color: #dcdcdc; /* Neutral light grey text for footer */
+    padding: 20px 0;
+    display: flex; /* Use Flexbox */
+    flex-direction: column; /* Align items in a column */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    text-align: center; /* Center the text */
+    border-top: 2px solid #333; /* Optional top border to separate footer */
+}
+
+/* Center Social Media Icons or Links (if applicable) */
+.social-icons {
+    margin-top: 10px; /* Space above social icons */
+    display: flex; /* Flexbox for alignment */
+    justify-content: center; /* Center the icons horizontally */
+    gap: 20px; /* Space between icons */
+}
+
+.social-icons a {
+    color: #00d1ff; /* Neon blue for social icons */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Icon size */
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ffffff; /* White on hover */
+}
+
+/* Center Social Media Icons or Links (if applicable) */
+.projects {
+    margin-top: 10px; /* Space above social icons */
+    display: flex; /* Flexbox for alignment */
+    justify-content: center; /* Center the icons horizontally */
+    gap: 20px; /* Space between icons */
+}
+
+.projects a {
+    color: #00d1ff; /* Neon blue for social icons */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Icon size */
+    transition: color 0.3s ease;
+}
+
+.projects a:hover {
+    color: #ffffff; /* White on hover */
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+    /* Adjust font size and padding for smaller screens */
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
